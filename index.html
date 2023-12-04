@@ -129,6 +129,12 @@
  
   
   <canvas id="imageCanvas" style="display: none;"></canvas>
+	 <div class="unused-players" style="background-color: #f3f3f3; padding: 20px;">
+    <h3>Unused Players</h3>
+    <ul id="unusedPlayersList">
+      <!-- Unused players will be dynamically added here -->
+    </ul>
+  </div>
 
   <!-- Social Media Sharing Buttons -->
   <div class="share-buttons">
@@ -317,6 +323,20 @@
     
     alert('Players copied to clipboard!');
   }
+	function updateUnusedPlayers() {
+      const selectedPlayers = getSelectedPlayers();
+      const allPlayers = [...playerNames];
+      const unusedPlayers = allPlayers.filter(player => !selectedPlayers.includes(player));
+      const unusedPlayersList = document.getElementById('unusedPlayersList');
+      unusedPlayersList.innerHTML = '';
+      for (let i = 0; i < unusedPlayers.length && i < 3; i++) {
+        const listItem = document.createElement('li');
+        listItem.textContent = unusedPlayers[i];
+        unusedPlayersList.appendChild(listItem);
+      }
+	}
+	createPlayerSelection();
+    updateUnusedPlayers();
 </script>
 
 	<h3>© Riley Oakes 2023</h3>
