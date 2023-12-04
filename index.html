@@ -326,23 +326,22 @@
     alert('Players copied to clipboard!');
   }
 	function updateUnusedPlayers() {
-  const selectedPlayers = getSelectedPlayers().filter(player => player !== 'Select');
-  const unusedPlayers = playerNames.filter(player => !selectedPlayers.includes(player));
+      const selectedPlayers = getSelectedPlayers().filter(player => player !== 'Select');
+      const unusedPlayers = playerNames.filter(player => !selectedPlayers.includes(player));
 
-  const unusedPlayersList = document.getElementById('unusedPlayersList');
-  unusedPlayersList.innerHTML = '';
+      const unusedPlayersList = document.getElementById('unusedPlayersList');
+      unusedPlayersList.innerHTML = '';
 
-  unusedPlayers.forEach(player => {
-    const listItem = document.createElement('li');
-    listItem.textContent = player;
-    unusedPlayersList.appendChild(listItem);
-  });
-}
+      unusedPlayers.forEach(player => {
+        const listItem = document.createElement('li');
+        listItem.textContent = player;
+        unusedPlayersList.appendChild(listItem);
+      });
+    }
 
-	}
-	
+    // Call the function to update the unused players
     updateUnusedPlayers();
-</script>
+  </script>
 
 	<h3>© Riley Oakes 2023</h3>
 </body>
