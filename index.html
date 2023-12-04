@@ -326,16 +326,19 @@
     alert('Players copied to clipboard!');
   }
 	function updateUnusedPlayers() {
-      const selectedPlayers = getSelectedPlayers();
-      const allPlayers = [...playerNames];
-      const unusedPlayers = allPlayers.filter(player => !selectedPlayers.includes(player));
-      const unusedPlayersList = document.getElementById('unusedPlayersList');
-      unusedPlayersList.innerHTML = '';
-      for (let i = 0; i < unusedPlayers.length && i < 3; i++) {
-        const listItem = document.createElement('li');
-        listItem.textContent = unusedPlayers[i];
-        unusedPlayersList.appendChild(listItem);
-      }
+  const selectedPlayers = getSelectedPlayers().filter(player => player !== 'Select');
+  const unusedPlayers = playerNames.filter(player => !selectedPlayers.includes(player));
+
+  const unusedPlayersList = document.getElementById('unusedPlayersList');
+  unusedPlayersList.innerHTML = '';
+
+  unusedPlayers.forEach(player => {
+    const listItem = document.createElement('li');
+    listItem.textContent = player;
+    unusedPlayersList.appendChild(listItem);
+  });
+}
+
 	}
 	
     updateUnusedPlayers();
