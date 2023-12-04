@@ -280,7 +280,7 @@
     // Function to share selected players on Twitter
     function shareOnTwitter() {
       const selectedPlayers = getSelectedPlayers(); // Replace this with your logic to get the selected players
-      const textToShare = `My selected Australian Test XI is: ${selectedPlayers.join(', ')}`;
+      const textToShare = `The team for this week is as follows: ${selectedPlayers.join(', ')}`;
       const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(textToShare)}`;
       window.open(tweetUrl, '_blank');
     }
@@ -288,7 +288,7 @@
     // Function to share selected players on Facebook
     function shareOnFacebook() {
       const selectedPlayers = getSelectedPlayers(); // Replace this with your logic to get the selected players
-      const textToShare = `My selected Australian Test XI is: ${selectedPlayers.join(', ')}`;
+      const textToShare = `The team for this week is as follows: ${selectedPlayers.join(', ')}`;
       const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=&quote=${encodeURIComponent(textToShare)}`;
       window.open(fbUrl, '_blank');
     }
@@ -309,7 +309,7 @@
 	
 	 function copyToClipboard() {
     const selectedPlayers = getSelectedPlayers();
-    const textToCopy = `My selected Australian Test XI is: ${selectedPlayers.join(', ')}`;
+    const textToCopy = `The team for this week is as follows: ${selectedPlayers.join(', ')}`;
     
     const textarea = document.createElement('textarea');
     textarea.value = textToCopy;
