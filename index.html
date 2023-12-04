@@ -211,6 +211,7 @@
         select.id = `player${i}`;
         select.onchange = function() {
           changePlayerImage(playerImg, this.value);
+          updateUnusedPlayers(); // Update unused players when selection changes
         };
 
         for (let j = 0; j < playerNames.length; j++) {
@@ -227,6 +228,7 @@
         playerSelectionDiv.appendChild(playerSelectionItem);
       }
     }
+
 
     function changePlayerImage(imgElement, playerName) {
       imgElement.src = playerImageURLs[playerName] || playerImageURLs[playerNames[0]]; // Set default image URL for "Select"
