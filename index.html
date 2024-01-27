@@ -162,6 +162,7 @@
 	    "Roshan Rajesh",
 	    "Lachlann Tupper",
 	     "Nimal Sivakumar",
+	     "Sub Player",
    
       // Add more player names
     ];
@@ -184,7 +185,7 @@
       "Roshan Rajesh": "https://static-files.cricket-australia.pulselive.com/headshots/288/placeholder.png",
       "Lachlann Tupper": "https://static-files.cricket-australia.pulselive.com/headshots/288/placeholder.png",
       "Nimal Sivakumar": "https://static-files.cricket-australia.pulselive.com/headshots/288/placeholder.png",
-      "Usman Khawaja": "https://static-files.cricket-australia.pulselive.com/headshots/288/placeholder.png",
+      "Sub Player": "https://static-files.cricket-australia.pulselive.com/headshots/288/placeholder.png",
       "Usman Khawaja": "https://static-files.cricket-australia.pulselive.com/headshots/288/placeholder.png",
       "Usman Khawaja": "https://static-files.cricket-australia.pulselive.com/headshots/288/placeholder.png",
       "Peter Handscomb": "https://static-files.cricket-australia.pulselive.com/headshots/288/289-test.png",
@@ -197,7 +198,7 @@
     function createPlayerSelection() {
       const playerSelectionDiv = document.getElementById("playerSelection");
 
-      for (let i = 1; i <= 11; i++) {
+      for (let i = 1; i <= 12; i++) {
         const playerSelectionItem = document.createElement("div");
         playerSelectionItem.classList.add("playerSelectionItem");
 
@@ -247,7 +248,7 @@
       // Draw selected players' images on the canvas
       const playerImages = [];
       let y = 10;
-      for (let i = 1; i <= 11; i++) {
+      for (let i = 1; i <= 12; i++) {
         const selectedPlayer = document.getElementById(`player${i}`).value;
         const playerImage = new Image();
         playerImage.src = playerImageURLs[selectedPlayer]; // Get player's image URL
